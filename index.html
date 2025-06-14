@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfólio | Seu Nome</title>
+    <title>Portfólio | Felipe Ribeiro</title>
     <style>
         * {
             margin: 0;
@@ -41,9 +41,34 @@
         }
 
         section {
-            max-width: 900px;
+            max-width: 1000px;
             margin: 40px auto;
             padding: 0 20px;
+        }
+
+        h2 {
+            color: #222;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #d33;
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 20px;
+        }
+
+        .skill-box {
+            border-left: 4px solid #d33;
+            padding-left: 20px;
+        }
+
+        .skill-box h3 {
+            color: #d33;
+            margin-bottom: 10px;
         }
 
         .projeto {
@@ -80,15 +105,24 @@
         .botao:hover {
             background-color: #005bb5;
         }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        ul li {
+            margin-bottom: 6px;
+        }
     </style>
 </head>
 <body>
 
 <header>
-    <h1>Seu Nome</h1>
-    <p>Desenvolvedor Web | Designer | Freelancer</p>
+    <h1>Felipe Ribeiro</h1>
+    <p>Desenvolvedor Web | Cientista de Dados | Freelancer</p>
     <nav>
         <a href="#sobre">Sobre</a>
+        <a href="#habilidades">Habilidades</a>
         <a href="#projetos">Projetos</a>
         <a href="#contato">Contato</a>
     </nav>
@@ -96,7 +130,58 @@
 
 <section id="sobre">
     <h2>🧑 Sobre Mim</h2>
-    <p>Sou um desenvolvedor apaixonado por tecnologia, com experiência em criação de sites, sistemas web e interfaces modernas. Busco sempre entregar soluções criativas e funcionais para meus clientes.</p>
+    <p><strong>Meu nome é Felipe Ribeiro</strong>. Sou formado em Análise e Desenvolvimento de Sistemas e trabalho como Desenvolvedor de Aplicações Web da Latam e Interno.</p>
+    <p>Atualmente, tenho trabalhado com funcionalidades, automações simples, relatórios, integrações, serviços de dados — e com sistemas de registros/logística de cadeia de suprimentos, trabalhando grosseiramente nos 3 pilares: Processos, Dados e Pessoas.</p>
+    <p>Estudando cada vez mais sobre Ciência de Dados, quero aplicar esse conhecimento em soluções para melhorar os negócios e tomada de decisões nas empresas com base em dados.</p>
+</section>
+
+<section id="habilidades">
+    <h2>🧠 Principais Habilidades</h2>
+    <div class="skills-grid">
+        <div class="skill-box">
+            <h3>Soft Skills e Problem Solving</h3>
+            <ul>
+                <li>Resolução de problemas e análise de registros</li>
+                <li>KPIs e métricas de negócios</li>
+                <li>Automação de planilhas e relatórios</li>
+            </ul>
+        </div>
+        <div class="skill-box">
+            <h3>Linguagens e Banco de Dados</h3>
+            <ul>
+                <li>Python, SQL, NoSQL</li>
+                <li>PostgreSQL, MySQL, Oracle DB</li>
+            </ul>
+        </div>
+        <div class="skill-box">
+            <h3>Machine Learning e Data Mining</h3>
+            <ul>
+                <li>Sklearn, XGBoost, LightGBM</li>
+                <li>Classificação, Regressão, Agrupamento</li>
+            </ul>
+        </div>
+        <div class="skill-box">
+            <h3>Estatística para Decisão</h3>
+            <ul>
+                <li>Estatística Descritiva</li>
+                <li>Teste de Hipóteses</li>
+            </ul>
+        </div>
+        <div class="skill-box">
+            <h3>Visualização de Dados</h3>
+            <ul>
+                <li>Power BI, Metabase</li>
+                <li>Plotly, Seaborn, Dash</li>
+            </ul>
+        </div>
+        <div class="skill-box">
+            <h3>MLOps e Engenharia</h3>
+            <ul>
+                <li>GitHub, Docker, Streamlit, Flask</li>
+                <li>APIs e deploy em nuvem</li>
+            </ul>
+        </div>
+    </div>
 </section>
 
 <section id="projetos">
@@ -113,22 +198,20 @@
         <p>Outro exemplo de projeto relevante que você criou ou participou.</p>
         <a class="botao" href="https://github.com/seuusuario/projeto2" target="_blank">Ver no GitHub</a>
     </div>
-
-    <!-- Adicione mais projetos conforme desejar -->
 </section>
 
 <section id="contato">
     <h2>📬 Contato</h2>
     <p>Você pode me encontrar nas redes ou enviar um e-mail diretamente:</p>
     <ul>
-        <li>Email: <a href="mailto:seuemail@exemplo.com">seuemail@exemplo.com</a></li>
+        <li>Email: <a href="mailto:felipe@email.com">felipe@email.com</a></li>
         <li>LinkedIn: <a href="https://linkedin.com/in/seunome" target="_blank">linkedin.com/in/seunome</a></li>
         <li>GitHub: <a href="https://github.com/seuusuario" target="_blank">github.com/seuusuario</a></li>
     </ul>
 </section>
 
 <footer>
-    <p>© 2025 Seu Nome • Portfólio pessoal</p>
+    <p>© 2025 Felipe Ribeiro • Portfólio pessoal</p>
 </footer>
 
 </body>
