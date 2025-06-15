@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Portfólio | Filipe Ambrozio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #2563eb;
+      --gray-dark: #1e293b;
+      --gray: #64748b;
+      --light-bg: #f1f5f9;
+      --white: #ffffff;
+      --black: #000000;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-image: url('/home/nick-02/Área de Trabalho/Portifolio/images4.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      color: var(--gray-dark);
+      line-height: 1.7;
+    }
+
+    header {
+      background-color: var(--gray-dark);
+      color: var(--white);
+      padding: 50px 20px;
+      text-align: center;
+      position: relative;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      color: #cbd5e1;
+    }
+
+    nav {
+      margin-top: 20px;
+    }
+
+    nav a {
+      color: var(--white);
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: var(--primary);
+    }
+
+    /* Botão modo escuro */
+    #toggle-dark-mode {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      padding: 8px 15px;
+      background: var(--primary);
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: background-color 0.3s;
+    }
+
+    #toggle-dark-mode:hover {
+      background-color: #1d4ed8;
+    }
+
+    section {
+      max-width: 1000px;
+      margin: 60px auto;
+      padding: 20px;
+      background-color: rgba(255, 255, 255, 0.15);
+      border-radius: 12px;
+      color: var(--black);
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    section h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      border-left: 5px solid var(--primary);
+      padding-left: 15px;
+      color: var(--black);
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+    }
+
+    .skill-box {
+      background-color: rgba(255, 255, 255, 0.15);
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+      transition: transform 0.2s, background-color 0.3s, color 0.3s;
+      color: var(--black);
+    }
+
+    .skill-box:hover {
+      transform: translateY(-5px);
+    }
+
+    .skill-box h3 {
+      color: var(--primary);
+      margin-bottom: 10px;
+      font-size: 1.1rem;
+    }
+
+    .skill-box ul {
+      padding-left: 20px;
+      color: var(--black);
+    }
+
+    .skill-box li {
+      margin-bottom: 6px;
+    }
+
+    .projeto {
+      background-color: rgba(255, 255, 255, 0.15);
+      border-left: 5px solid var(--primary);
+      padding: 20px;
+      margin-bottom: 30px;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      color: var(--black);
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .projeto h3 {
+      color: var(--primary);
+      margin-bottom: 10px;
+    }
+
+    .botao {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 10px 20px;
+      background-color: var(--primary);
+      color: white;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: background-color 0.3s;
+    }
+
+    .botao:hover {
+      background-color: #1d4ed8;
+    }
+
+    #contato ul {
+      padding-left: 20px;
+      color: var(--black);
+      transition: color 0.3s;
+    }
+
+    #contato a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    #contato a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      background-color: #e2e8f0;
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9rem;
+      color: var(--gray-dark);
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    /* MODO ESCURO */
+    body.dark-mode {
+      background-color: #121212;
+      background-image: none;
+      color: #eee;
+    }
+
+    body.dark-mode header {
+      background-color: #1e293b;
+      color: #eee;
+    }
+
+    body.dark-mode header p {
+      color: #a0aec0;
+    }
+
+    body.dark-mode nav a {
+      color: #eee;
+    }
+
+    body.dark-mode nav a:hover {
+      color: var(--primary);
+    }
+
+    body.dark-mode section {
+      background-color: rgba(30, 41, 59, 0.75);
+      color: #eee;
+    }
+
+    body.dark-mode section h2 {
+      color: #a0aec0;
+      border-left-color: var(--primary);
+    }
+
+    body.dark-mode .skill-box {
+      background-color: rgba(30, 41, 59, 0.75);
+      color: #eee;
+    }
+
+    body.dark-mode .skill-box h3 {
+      color: var(--primary);
+    }
+
+    body.dark-mode .skill-box ul,
+    body.dark-mode .skill-box li,
+    body.dark-mode #contato ul {
+      color: #ccc;
+    }
+
+    body.dark-mode .projeto {
+      background-color: rgba(30, 41, 59, 0.75);
+      border-left-color: var(--primary);
+      color: #eee;
+    }
+
+    body.dark-mode .botao {
+      background-color: var(--primary);
+      color: white;
+    }
+
+    body.dark-mode .botao:hover {
+      background-color: #1d4ed8;
+    }
+
+    body.dark-mode footer {
+      background-color: #1e293b;
+      color: #a0aec0;
+    }
+
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2rem;
+      }
+
+      header p {
+        font-size: 1rem;
+      }
+
+      section {
+        margin: 30px 10px;
+        padding: 15px;
+      }
+
+      .skills-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .skill-box {
+        padding: 15px;
+      }
+
+      .botao {
+        width: 100%;
+        text-align: center;
+      }
+
+      #toggle-dark-mode {
+        top: 10px;
+        right: 10px;
+        padding: 6px 12px;
+        font-size: 0.9rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Filipe Ambrozio</h1>
+    <p> Cientista de Dados | Python | Excel | VBA | PowerBi | SQL | Machine Learning | Análise de DADOS | Freelancer</p>
+    <button id="toggle-dark-mode">Modo Escuro</button>
+    <nav>
+      <a href="#sobre">Sobre</a>
+      <a href="#habilidades">Habilidades</a>
+      <a href="#projetos">Projetos</a>
+      <a href="#contato">Contato</a>
+    </nav>
+  </header>
+
+  <section id="sobre">
+    <h2>🧑 Sobre Mim</h2>
+    <p><strong>Meu nome é Felipe Ambrozio</strong>. Sou estudante de Ciências de Dados, estou no 4º período e trabalho na área de varejo há 15 anos. Mais precisamente 10 anos como fiscal de prevenção de perdas.</p>
+    <p>Atualmente, tenho trabalhado em projetos com funcionalidades, automações simples, relatórios, integrações, serviços de dados — e com sistemas de registros/logística de cadeia de suprimentos, trabalhando grosseiramente nos 3 pilares: Processos, Dados e Pessoas.</p>
+    <p>Estudando cada vez mais sobre Ciência de Dados, quero aplicar esse conhecimento em soluções para melhorar os negócios e tomada de decisões nas empresas com base em dados.</p>
+  </section>
+
+  <section id="habilidades">
+    <h2>🧠 Principais Habilidades</h2>
+    <div class="skills-grid">
+      <div class="skill-box">
+        <h3>Soft Skills e Problem Solving</h3>
+        <ul>
+          <li>Resolução de problemas e análise de registros</li>
+          <li>KPIs e métricas de negócios</li>
+          <li>Automação de planilhas e relatórios</li>
+        </ul>
+      </div>
+      <div class="skill-box">
+        <h3>Linguagens e Banco de Dados</h3>
+        <ul>
+          <li>Python, SQL, NoSQL</li>
+          <li>PostgreSQL, MySQL, Oracle DB</li>
+        </ul>
+      </div>
+      <div class="skill-box">
+        <h3>Machine Learning e Data Mining</h3>
+        <ul>
+          <li>Sklearn, XGBoost, LightGBM</li>
+          <li>Classificação, Regressão, Agrupamento</li>
+        </ul>
+      </div>
+      <div class="skill-box">
+        <h3>Estatística para Decisão</h3>
+        <ul>
+          <li>Estatística Descritiva</li>
+          <li>Teste de Hipóteses</li>
+        </ul>
+      </div>
+      <div class="skill-box">
+        <h3>Visualização de Dados</h3>
+        <ul>
+          <li>Power BI, Metabase</li>
+          <li>Plotly, Seaborn, Dash</li>
+        </ul>
+      </div>
+      <div class="skill-box">
+        <h3>MLOps e Engenharia</h3>
+        <ul>
+          <li>GitHub, Docker, Streamlit, Flask</li>
+          <li>APIs e deploy em nuvem</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="projetos">
+    <h2>💼 Projetos</h2>
+
+    <div class="projeto">
+      <h3>🔗 Nome do Projeto 1</h3>
+      <p>Descrição breve do projeto, tecnologias utilizadas, objetivo e resultado.</p>
+      <a class="botao" href="https://github.com/seuusuario/projeto1" target="_blank" rel="noopener noreferrer">Ver no GitHub</a>
+    </div>
+
+    <div class="projeto">
+      <h3>🔗 Nome do Projeto 2</h3>
+      <p>Outro exemplo de projeto relevante que você criou ou participou.</p>
+      <a class="botao" href="https://github.com/seuusuario/projeto2" target="_blank" rel="noopener noreferrer">Ver no GitHub</a>
+    </div>
+  </section>
+
+  <section id="contato">
+    <h2>📬 Contato</h2>
+    <p>Você pode me encontrar nas redes ou enviar um e-mail diretamente:</p>
+    <ul>
+      <li>Email: <a href="mailto:felipe@email.com">felipe@email.com</a></li>
+      <li>LinkedIn: <a href="https://linkedin.com/in/seunome" target="_blank" rel="noopener noreferrer">linkedin.com/in/seunome</a></li>
+      <li>GitHub: <a href="https://github.com/seuusuario" target="_blank" rel="noopener noreferrer">github.com/seuusuario</a></li>
+    </ul>
+  </section>
+
+  <footer>
+    <p>© 2025 Filipe Ambrozio • Portfólio pessoal</p>
+  </footer>
+
+  <script>
+    const toggleButton = document.getElementById('toggle-dark-mode');
+    const body = document.body;
+
+    // Verifica preferencia no localStorage
+    if(localStorage.getItem('dark-mode') === 'enabled'){
+      body.classList.add('dark-mode');
+      toggleButton.textContent = 'Modo Claro';
+    }
+
+    toggleButton.addEventListener('click', () => {
+      body.classList.toggle('dark-mode');
+
+      if(body.classList.contains('dark-mode')){
+        toggleButton.textContent = 'Modo Claro';
+        localStorage.setItem('dark-mode', 'enabled');
+      } else {
+        toggleButton.textContent = 'Modo Escuro';
+        localStorage.setItem('dark-mode', 'disabled');
+      }
+    });
+  </script>
+
+</body>
+</html>
