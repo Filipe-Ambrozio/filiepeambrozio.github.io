@@ -1,430 +1,758 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
+<!DOCTYPE HTML>
+<!--
+	Editorial by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Portfólio | Filipe Ambrozio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --primary: #2563eb;
-      --gray-dark: #1e293b;
-      --gray: #64748b;
-      --light-bg: #f1f5f9;
-      --white: #ffffff;
-      --black: #000000;
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    html, body {
-      height: 100%;
-      transition: background-color 0.3s, color 0.3s;
-    }
-
-    body {
-      font-family: 'Inter', sans-serif;
-      background-image: url('images4.jpg');
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      background-attachment: fixed;
-      color: var(--gray-dark);
-      line-height: 1.7;
-    }
-
-    header {
-      background-color: var(--gray-dark);
-      color: var(--white);
-      padding: 50px 20px;
-      text-align: center;
-      position: relative;
-    }
-
-    header h1 {
-      font-size: 2.5rem;
-      margin-bottom: 10px;
-    }
-
-    header p {
-      font-size: 1.2rem;
-      color: #cbd5e1;
-    }
-
-    nav {
-      margin-top: 20px;
-    }
-
-    nav a {
-      color: var(--white);
-      text-decoration: none;
-      margin: 0 15px;
-      font-weight: 500;
-      transition: color 0.3s;
-    }
-
-    nav a:hover {
-      color: var(--primary);
-    }
-
-    /* Botão modo escuro */
-    #toggle-dark-mode {
-      position: absolute;
-      top: 20px;
-      right: 20px;
-      padding: 8px 15px;
-      background: var(--primary);
-      color: white;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-      font-weight: 600;
-      transition: background-color 0.3s;
-    }
-
-    #toggle-dark-mode:hover {
-      background-color: #1d4ed8;
-    }
-
-    section {
-      max-width: 1000px;
-      margin: 60px auto;
-      padding: 20px;
-      background-color: rgba(255, 255, 255, 0.15);
-      border-radius: 12px;
-      color: var(--black);
-      transition: background-color 0.3s, color 0.3s;
-    }
-
-    section h2 {
-      font-size: 2rem;
-      margin-bottom: 20px;
-      border-left: 5px solid var(--primary);
-      padding-left: 15px;
-      color: var(--black);
-    }
-
-    .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 25px;
-    }
-
-    .skill-box {
-      background-color: rgba(255, 255, 255, 0.15);
-      padding: 20px;
-      border-radius: 12px;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-      transition: transform 0.2s, background-color 0.3s, color 0.3s;
-      color: var(--black);
-    }
-
-    .skill-box:hover {
-      transform: translateY(-5px);
-    }
-
-    .skill-box h3 {
-      color: var(--primary);
-      margin-bottom: 10px;
-      font-size: 1.1rem;
-    }
-
-    .skill-box ul {
-      padding-left: 20px;
-      color: var(--black);
-    }
-
-    .skill-box li {
-      margin-bottom: 6px;
-    }
-
-    .projeto {
-      background-color: rgba(255, 255, 255, 0.15);
-      border-left: 5px solid var(--primary);
-      padding: 20px;
-      margin-bottom: 30px;
-      border-radius: 10px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-      color: var(--black);
-      transition: background-color 0.3s, color 0.3s;
-    }
-
-    .projeto h3 {
-      color: var(--primary);
-      margin-bottom: 10px;
-    }
-
-    .botao {
-      display: inline-block;
-      margin-top: 10px;
-      padding: 10px 20px;
-      background-color: var(--primary);
-      color: white;
-      border-radius: 6px;
-      text-decoration: none;
-      font-weight: 500;
-      transition: background-color 0.3s;
-    }
-
-    .botao:hover {
-      background-color: #1d4ed8;
-    }
-
-    #contato ul {
-      padding-left: 20px;
-      color: var(--black);
-      transition: color 0.3s;
-    }
-
-    #contato a {
-      color: var(--primary);
-      text-decoration: none;
-    }
-
-    #contato a:hover {
-      text-decoration: underline;
-    }
-
-    footer {
-      background-color: #e2e8f0;
-      text-align: center;
-      padding: 20px;
-      font-size: 0.9rem;
-      color: var(--gray-dark);
-      transition: background-color 0.3s, color 0.3s;
-    }
-
-    /* MODO ESCURO */
-    body.dark-mode {
-      background-color: #121212;
-      background-image: none;
-      color: #eee;
-    }
-
-    body.dark-mode header {
-      background-color: #1e293b;
-      color: #eee;
-    }
-
-    body.dark-mode header p {
-      color: #a0aec0;
-    }
-
-    body.dark-mode nav a {
-      color: #eee;
-    }
-
-    body.dark-mode nav a:hover {
-      color: var(--primary);
-    }
-
-    body.dark-mode section {
-      background-color: rgba(30, 41, 59, 0.75);
-      color: #eee;
-    }
-
-    body.dark-mode section h2 {
-      color: #a0aec0;
-      border-left-color: var(--primary);
-    }
-
-    body.dark-mode .skill-box {
-      background-color: rgba(30, 41, 59, 0.75);
-      color: #eee;
-    }
-
-    body.dark-mode .skill-box h3 {
-      color: var(--primary);
-    }
-
-    body.dark-mode .skill-box ul,
-    body.dark-mode .skill-box li,
-    body.dark-mode #contato ul {
-      color: #ccc;
-    }
-
-    body.dark-mode .projeto {
-      background-color: rgba(30, 41, 59, 0.75);
-      border-left-color: var(--primary);
-      color: #eee;
-    }
-
-    body.dark-mode .botao {
-      background-color: var(--primary);
-      color: white;
-    }
-
-    body.dark-mode .botao:hover {
-      background-color: #1d4ed8;
-    }
-
-    body.dark-mode footer {
-      background-color: #1e293b;
-      color: #a0aec0;
-    }
-
-    @media (max-width: 768px) {
-      header h1 {
-        font-size: 2rem;
-      }
-
-      header p {
-        font-size: 1rem;
-      }
-
-      section {
-        margin: 30px 10px;
-        padding: 15px;
-      }
-
-      .skills-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .skill-box {
-        padding: 15px;
-      }
-
-      .botao {
-        width: 100%;
-        text-align: center;
-      }
-
-      #toggle-dark-mode {
-        top: 10px;
-        right: 10px;
-        padding: 6px 12px;
-        font-size: 0.9rem;
-      }
-    }
-  </style>
+	<title>Portifólio</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="assets/css/main.css" />
 </head>
-<body>
 
-  <header>
-    <h1>Filipe Ambrozio</h1>
-    <p> Cientista de Dados | Python | Excel | VBA | PowerBi | SQL | Machine Learning | Análise de DADOS | Freelancer</p>
-    <button id="toggle-dark-mode">Modo Escuro</button>
-    <nav>
-      <a href="#sobre">Sobre</a>
-      <a href="#habilidades">Habilidades</a>
-      <a href="#projetos">Projetos</a>
-      <a href="#contato">Contato</a>
-    </nav>
-  </header>
+<body class="is-preload">
+		<!-- Botão de Dark Mode -->
+		<button id="dark-mode-toggle">Dark Mode</button>
 
-  <section id="sobre">
-    <h2>🧑 Sobre Mim</h2>
-    <p><strong>Meu nome é Felipe Ambrozio</strong>. Sou estudante de Ciências de Dados, estou no 4º período e trabalho na área de varejo há 15 anos. Mais precisamente 10 anos como fiscal de prevenção de perdas.</p>
-    <p>Atualmente, tenho trabalhado em projetos com funcionalidades, automações simples, relatórios, integrações, serviços de dados — e com sistemas de registros/logística de cadeia de suprimentos, trabalhando grosseiramente nos 3 pilares: Processos, Dados e Pessoas.</p>
-    <p>Estudando cada vez mais sobre Ciência de Dados, quero aplicar esse conhecimento em soluções para melhorar os negócios e tomada de decisões nas empresas com base em dados.</p>
-  </section>
+	<!-- Wrapper -->
+	<div id="wrapper">
 
-  <section id="habilidades">
-    <h2>🧠 Principais Habilidades</h2>
-    <div class="skills-grid">
-      <div class="skill-box">
-        <h3>Soft Skills e Problem Solving</h3>
-        <ul>
-          <li>Resolução de problemas e análise de registros</li>
-          <li>KPIs e métricas de negócios</li>
-          <li>Automação de planilhas e relatórios</li>
-        </ul>
-      </div>
-      <div class="skill-box">
-        <h3>Linguagens e Banco de Dados</h3>
-        <ul>
-          <li>Python, SQL, NoSQL</li>
-          <li>PostgreSQL, MySQL, Oracle DB</li>
-        </ul>
-      </div>
-      <div class="skill-box">
-        <h3>Machine Learning e Data Mining</h3>
-        <ul>
-          <li>Sklearn, XGBoost, LightGBM</li>
-          <li>Classificação, Regressão, Agrupamento</li>
-        </ul>
-      </div>
-      <div class="skill-box">
-        <h3>Estatística para Decisão</h3>
-        <ul>
-          <li>Estatística Descritiva</li>
-          <li>Teste de Hipóteses</li>
-        </ul>
-      </div>
-      <div class="skill-box">
-        <h3>Visualização de Dados</h3>
-        <ul>
-          <li>Power BI, Metabase</li>
-          <li>Plotly, Seaborn, Dash</li>
-        </ul>
-      </div>
-      <div class="skill-box">
-        <h3>MLOps e Engenharia</h3>
-        <ul>
-          <li>GitHub, Docker, Streamlit, Flask</li>
-          <li>APIs e deploy em nuvem</li>
-        </ul>
-      </div>
-    </div>
-  </section>
+		<!-- Main -->
+		<div id="main">
+			<div class="inner">
 
-  <section id="projetos">
-    <h2>💼 Projetos</h2>
+				<!-- Header -->
+				<header id="header">
+					<a href="new-port.html" class="logo"><strong>Portifólio</strong> Projetos de Ciência de Dados / modo Light</a>
+					<!-- <ul class="icons">
+										<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+										<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+										<li><a href="#" class="icon brands fa-snapchat-ghost"><span class="label">Snapchat</span></a></li>
+										<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+										<li><a href="#" class="icon brands fa-medium-m"><span class="label">Medium</span></a></li>
+									</ul> -->
+				</header>
 
-    <div class="projeto">
-      <h3>🔗 Nome do Projeto 1</h3>
-      <p>Descrição breve do projeto, tecnologias utilizadas, objetivo e resultado.</p>
-      <a class="botao" href="https://github.com/seuusuario/projeto1" target="_blank" rel="noopener noreferrer">Ver no GitHub</a>
-    </div>
+				<!-- Banner -->
+				<section id="banner">
+					<div class="content">
+						<header>
+							<h1>Olá, seja muito bem-vindo (a), é um prazer ter você aqui. ao meu portfólio de projetos de Ciência de Dados.</h1>
+						</header>
+						<p>Nessa página, eu demonstro minhas habilidades de resolver problemas de negócio utilizando
+							conceitos, técnicas e ferramentas de Ciência de Dados para resolver problemas de negócio
+							de forma prática e eficiente.
+							Compartilho projetos desenvolvidos com dados públicos, Você vai encontrar também,
+							minhas experiências profissionais, habilidades, ferramentas e 
+							conceitos envolvendo a Ciência de Dados.<br>
 
-    <div class="projeto">
-      <h3>🔗 Nome do Projeto 2</h3>
-      <p>Outro exemplo de projeto relevante que você criou ou participou.</p>
-      <a class="botao" href="https://github.com/seuusuario/projeto2" target="_blank" rel="noopener noreferrer">Ver no GitHub</a>
-    </div>
-  </section>
+							de Ciência de Dados para resolver problemas de negócio de forma prática e eficiente.<br>
+							Você vai encontrar também, minhas experiências profissionais, habilidades, ferramentas e
+							conceitos envolvendo a Ciência de Dados.</p>
 
-  <section id="contato">
-    <h2>📬 Contato</h2>
-    <p>Você pode me encontrar nas redes ou enviar um e-mail diretamente:</p>
-    <ul>
-      <li>Email: <a href="mailto:felipe@email.com">felipe@email.com</a></li>
-      <li>LinkedIn: <a href="https://linkedin.com/in/seunome" target="_blank" rel="noopener noreferrer">linkedin.com/in/seunome</a></li>
-      <li>GitHub: <a href="https://github.com/seuusuario" target="_blank" rel="noopener noreferrer">github.com/seuusuario</a></li>
-    </ul>
-  </section>
+							
+					</div>
+					<span class="image object">
+						<img src="images/profile.jpeg" alt="" />
+					</span>
+				</section>
 
-  <footer>
-    <p>© 2025 Filipe Ambrozio • Portfólio pessoal</p>
-  </footer>
+				<section>
+					<header>
+						<h1>Sobre mim</h1>
+					</header>
+					<!-- Content -->
+					<h2 id="content">Meu nome é Felipe Ambrozio</h2>
+					<p>sou estundante de ciencias de Dados estou no 4 periodo e atualmente trabalho como Fiscal de Prevenção de Perdas
+						há 15 anos e 6 meses.</p>
+					<p>
+						Atualmente, asumo a responsabilidade de agente de prevenção de perdas, onde monitoram e fiscaliza processos e procedimentos em estabelecimentos,
+						visando prevenir e mitigar perdas financeiras e patrimoniais, atuando na área de varejo.<br> 
+                        Com precedente para desenvolvendo ferramentas para flexbilizar e agilizar trabalhos,
+						Ultilizo ferramentas como Excel para automatizar tarefaz e para estruturas dados em busca de insigner.
+						faço operação em sistema de CFTV e gestão de Inventario, desenvolvir ferramnetas para automaizar a gestoa de precificação e organizaçao de perdas o peracional.
+						adquirir experiência na solução de problemas de negócio e domínio sobre as ferramentas de
+						análise de dados.
+					</p>
+					<p>
+						Estou buscando uma oportunidade de trabalhar profissionalmente como Cientista de Dados para
+						melhorar a tomada de decisão da empresa, através da construção de soluções usando dados.
+					</p>
 
-  <script>
-    const toggleButton = document.getElementById('toggle-dark-mode');
-    const body = document.body;
+				</section>
+				<!-- Section -->
+				<section>
+					<header class="major">
+						<h2>Principais Habilidades</h2>
+					</header>
+					<div class="features">
+						<article>
+							<span class="icon fa solid fa-brain"></span>
+							<div class="content">
+								<h3>Soft Skills e Problem Solving</h3>
+								<ul>
+									<li>Resolver problemas orientados a dados e a resultado de negócio</li>
+									<li>Foco em soluções de alto impacto de negócio</li>
+									<li>Foco em métricas acionáveis</li>
+									<li>Foco na dor do negócio e do cliente</li>
+									<li>Proatividade e trabalho em Equipe</li>
+									<li>Boa comunicação oral e escrita</li>
+									<li>Objetividade e clareza ao comunicar ideias ao time</li>
+									<li>Storytelling com Dados</li>
+									<li>Raciocínio Lógico e Senso crítico</li>
+								</ul>
+							</div>
+						</article>
+						<article>
+							<span class="icon fa solid fa-code"></span>
+							<div class="content">
+								<h3>Linguagens de Programação e Banco de Dados</h3>
+								<ul>
+									<li>Python</li>
+									<li>SQL e NoSQL</li>
+									<li>R para modelagem estatística</li>
+									<!-- <li></li> -->
+									<li>Banco de Dados Postgresql, SQLite, MySQL, SupaBase</li>
+								</ul>
+							</div>
+						</article>
+						<!-- <i class="fa-solid fa-head-side-gear"></i> -->
+						<!-- <i class="fa-solid fa-robot"></i> -->
+						<article>
+						<span class="icon solid fa-solid fa-robot"></span>
+						<div class="content">
+							<h3>Machine Learning Data Mining e IA Generativa/Automatização</h3>
+							<ul>
+								<li>Modelos/Algoritmos de Classificação, Clusterização, Sistemas de Recomendação, Regressão Linear, 
+									Regressão Logística, Séries Temporais, Redes Neurais, Naive Bayes, Árvore de Decisão, 
+									Support Vector Machine (SVM), K-Means, KNN.</li>
+								<li>Técnicas de balanceamento dos dados, seleção de atributos e redução de
+									dimensionalidade</li>
+								<li>Métricas de performance dos algoritmos (RMSE, MAE, MAPE, Confusion Matrix, Precisão,
+									Recall, Curva ROC, Curva Lift, AUC, Silhouette Score, DB-Index)</li>
+								<li>Pacotes de Machine Learning: Sklearn e Scipy</li>
+								<li>Interpretabilidade de Modelos com SHAP</li>
+								<li>Lovable, N8n, VBA</li>
+							</ul>
+						</div>
+						</article>
+						<article>
+							<!-- <i class="fa-solid fa-chart-simple"></i> -->
+							<!-- <i class="fa-light fa-chart-simple"></i> -->
+							<!-- <i class="fa-duotone fa-solid fa-chart-simple"></i> -->
+							<!-- <i class="fa-duotone fa-solid fa-chart-line"></i> -->
+							<span class="icon fa-duotone fa solid fa-chart-bar"></span>
+							<!-- <span class="icon fa solid fa-rocket"></span> -->
+							<div class="content">
+								<h3>Estatística para Tomada de Decisão</h3>
+								<ul>
+									<li>Estatística Descritiva</li>
+									<li>Teste de Hipóteses</li>
+									<li>Planejamento de Experimentos: Teste A/B, Teste A/B/n, DIC, DQL, DBC e Fatoriais</li>
+								</ul>
+							</div>
+						</article>
+						<article>
+							<!-- <span class="icon solid fa-rocket"></span> -->
+							<span class="icon solid fa-eye"></span>
+							<!-- <i class="fa-solid fa-chart-scatter"></i> -->
+							<div class="content">
+								<h3>Visualização de Dados</h3>
+								<ul>
+									<li>Matplotlib, Seaborn, Plotly e Bokeh</li>
+									<li>Power BI, Metabase</li>
+								</ul>
+							</div>
+						</article>
+						<article>
+							<span class="icon fa solid fa-signal"></span>
+							<div class="content">
+								<h3>MLOps e Engenharia de Software</h3>
+								<ul>
+									<li>Git, Github, Notion</li>
+									<li>Streamlit, Flask-API, Shiny</li>
+									<li>Azure, Docker, Airflow, PySpark, AWS Sagemaker, Google Cloud Platform ( GCP )
+									</li>
+								</ul>
+							</div>
+						</article>
+						<article>
+							<!-- <img src="images/money-bill-trend-up-solid.svg" alt=""> -->
+							<!-- <i class="icon fa solid fa-money-bill-trend-up"></i> -->
+							<!-- <i class="fa-solid fa-money-bill-trend-up"></i> -->
+							<!-- <span class="icon fa solid fa-money-bill-trend-up"></span> -->
+							<span class="icon fa solid fa-gem"></span>
+							<div class="content">
+								<h3>Pesquisa Operacional e Otimização</h3>
+								<ul>
+									<li>Algorítmos Genéticos</li>
+									<li>Otimização com Programação Linear Inteira e Não Inteira</li>
+									<li>Otimizaçõa com Programação Não Linear</li>
+								</ul>
+							</div>
+						</article>
+						<article>
+							<!-- <img src="images/money-bill-trend-up-solid.svg" alt=""> -->
+							<!-- <i class="icon fa solid fa-money-bill-trend-up"></i> -->
+							<!-- <i class="fa-solid fa-magnifying-glass-chart"></i> -->
+							<!-- <i class="fa-solid fa-magnifying-glass-dollar"></i> -->
+							<!-- <i class="fa-solid fa-magnifying-glass"></i> -->
+							<span class="icon fa solid fa-chart-line"></span>
+							<div class="content">
+								<h3>Análise de Dados</h3>
+								<ul>
+									<li>Análises: Exploratória, Descritiva, Diagnóstica, Preditiva e Prescritiva</li>
+									<li>Análise de Cohort</li>
+									<li>Análise RMF</li>
+									<li>Market Basket Analysis (com Regras de Associação e Algoritmo Apriori e ECLAT)</li>
+									<li>Análise Conjunta</li>
+									<li>PCA</li>
+									<li>Análise de Sentimentos</li>
+									<li>Análise de Sobrevivência</li>
+								</ul>
+							</div>
+						</article>
+					</div>
+				</section>
 
-    // Verifica preferencia no localStorage
-    if(localStorage.getItem('dark-mode') === 'enabled'){
-      body.classList.add('dark-mode');
-      toggleButton.textContent = 'Modo Claro';
-    }
+				<section>
+					<header class="main">
+						<h1>Experiências</h1>
+					</header>
 
-    toggleButton.addEventListener('click', () => {
-      body.classList.toggle('dark-mode');
+					<!-- Content -->
+					<h2 id="content">14.5+ anos Losprever</h2>
+					<p>Sou um profissional responsáveis por monitorar a entrada e saída de pessoas e mercadorias, verificar o cumprimento de normas e procedimentos,
+						identificar comportamentos suspeitos e implementar medidas para reduzir riscos de furtos, roubos e danos aos produtos
+						sistema</p>
 
-      if(body.classList.contains('dark-mode')){
-        toggleButton.textContent = 'Modo Claro';
-        localStorage.setItem('dark-mode', 'enabled');
-      } else {
-        toggleButton.textContent = 'Modo Escuro';
-        localStorage.setItem('dark-mode', 'disabled');
-      }
-    });
-  </script>
+					<!-- <h2 id="content">10 meses+ anos como Analista de Risco</h2>
+										<p>Estudo e seleção de ativos de baixo risco para clientes com perfil de investidor conservador. Rotinas de atualização de relatórios e métricas para os "steakholder".</p>
+									 -->
+				</section>
+
+				<!-- Section -->
+				<section>
+					<header class="major">
+						<h2>Principais Projetos em Ciências de Dados</h2>
+					</header>
+					<div class="posts">
+						<article>
+							<a href="#" class="image"><img src="images/rossmann.jpg" alt="" /></a>
+							<h3>Projeto de Previsão de Vendas Rossmann</h3>
+							<p>Nesse projeto, foram utilizados conceitos de Estatística, Programação em Python,
+								Pensamento Analítico, Manipulação de Dados, Lógica de Negócio e Machine Learning visando
+								resolver o problema de negócio da Rede de Farmácias Rossmann, durante o projeto foi
+								desenvolvido um modelo de previsão de vendas automatizado para a rede de farmácias
+								Rossmann, reduzindo a dependência de previsões manuais.</p>
+							<p>No projeto, foi desenvolvida uma aplicação web que permite um acesso fácil e integrado ao
+								modelo em produção, tornando as previsões disponíveis para qualquer consumidor a
+								qualquer momento.</p>
+
+							<h4>As ferramentas utilizadas foram:</h4>
+							<ul>
+								<li>Python 3.11 e Pyenv</li>
+								<li>Ferramentas de Estatística descritiva ( localização, dispersão, assimetria,
+									kurtosis, densidade )</li>
+								<li>Pandas e Numpy.</li>
+								<li>Matplotlib e Seaborn</li>
+								<li>Scikit-learn, Boruta, Skopt, XGBoost</li>
+								<li>Git</li>
+								<li>Flask e Streamlit</li>
+							</ul>
+
+							<ul class="actions">
+								<li><a href="https://github.com/f-mtz/rossmann-sales-predict/tree/main"
+										class="button">Saiba Mais</a></li>
+							</ul>
+						</article>
+
+						<article>
+							<a href="#" class="image"><img src="images/customer-loyalty-program-examples.webp"
+									alt="" /></a>
+							<h3>Construção de um programa de fidelidade com clusterização de clientes.</h3>
+							<p>Eu usei Python, Estatística e técnicas não-supervisionadas de Machine Learning para
+								segmentar um grupo de clientes com base em suas características de performance de
+								compra, a fim de selecionar grupos de clientes para formar um programa de Fidelidade com
+								o objetivo de aumentar a receita da empresa. E o resultado dessa solução, caso fosse
+								implementada, seria de R$ 15MM de dólares de receita anual.</p>
+							<h4>As ferramentas utilizadas foram:</h4>
+							<ul>
+								<li>Git, Gitlab e Github</li>
+								<li>Python, Pandas, Matplotlib e Seaborn Jupyter Notebook</li>
+								<li>K-Means, Hierarquical Clustering, DBScan</li>
+								<li>AWS Cloud ( EC2, S3, Postgres, SQLite )</li>
+								<li>Metabase Visualization</li>
+							</ul>
+							<ul class="actions">
+								<li><a href="#" class="button">Saiba mais</a></li>
+							</ul>
+						</article>
+						<article>
+							<a href="#" class="image"><img src="images/credit_analysis.jpg" alt="" /></a>
+							<h3>Credit Score: Modelo de tomada de decisão automática na concessão de créditos</h3>
+							<p>O modelo usa regressão logística e é alimentado por uma base histórica de clientes
+								adimplentes e inadimplentes e toma a decisão calculando o risco com base na
+								probabilidade de um cliente ser inadimplente, e também respeita a legislação brasileira
+								a respeito de dados sensíveis</p>
+							<h4>As ferramentas utilizadas foram:</h4>
+							<ul>
+								<li>Linguagem: Python</li>
+								<li>Manipulação e Tratamentos da Pipeline: Pandas</li>
+								<li>Treinamento: Scikit-learn</li>
+								<li>IDE: Google Colab</li>
+								<li>Visualização: Matplotlib</li>
+							</ul>
+							<ul class="actions">
+								<li><a href="#" class="button">Saiba mais</a></li>
+							</ul>
+						</article>
+						<article>
+							<a href="#" class="image"><img src="images/freaudes-no-ecommerce.jpg" alt="" /></a>
+							<h3>Fraud Detection: Modelo de detecção de fraude em transações bancárias</h3>
+							<p>O modelo usa regressão logística e é alimentado por uma base histórica de clientes
+								adimplentes e inadimplentes e toma a decisão calculando o risco com base na
+								probabilidade de um cliente ser inadimplente, e também respeita a legislação brasileira
+								a respeito de dados sensíveis</p>
+							<h4>As ferramentas utilizadas foram:</h4>
+							<ul>
+								<li>Linguagem: Python</li>
+								<li>Manipulação e Tratamentos da Pipeline: Pandas, imblearn, Numpy, RandomizedSearchCV
+								</li>
+								<li>Insights: Pandas Profilling</li>
+								<li>Treinamento: Scikit-learn</li>
+								<li>IDE: Google Colab</li>
+							</ul>
+							<ul class="actions">
+								<li><a href="#" class="button">Saiba mais</a></li>
+							</ul>
+						</article>
+						<!-- <article>
+											<a href="#" class="image"><img src="images/luke-chesser-JKUTrJ4vK00-unsplash.jpg" alt="" /></a>
+											<h3>Identificação de imóveis para compra e revenda a fim de maximizar o lucro</h3>
+											<p>Identificação de imóveis abaixo do preço médio de venda e definição do preço ideal de revenda, a partir de uma análise exploratória de dados em Python</p>
+											<h4>As ferramentas utilizadas foram:</h4>
+											<ul>
+												<li>Python, Pandas, Numpy e Seaborn</li>
+												<li>Anaconda, Pycharm e Jupyter Notebook</li>
+												<li>Mapas interativos com Plotly e Folium</li>
+												<li>Heroku Cloud</li>
+												<li>Streamlit Python framework web</li>
+											</ul>
+											<ul class="actions">
+												<li><a href="#" class="button">Saiba mais</a></li>
+											</ul>
+										</article> -->
+						<!-- <article>
+											<a href="#" class="image"><img src="images/pic03.jpg" alt="" /></a>
+											<h3>Tempus ullamcorper</h3>
+											<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
+											<ul class="actions">
+												<li><a href="#" class="button">Saiba mais</a></li>
+											</ul>
+										</article>
+										<article>
+											<a href="#" class="image"><img src="images/pic04.jpg" alt="" /></a>
+											<h3>Sed etiam facilis</h3>
+											<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
+											<ul class="actions">
+												<li><a href="#" class="button">Saiba mais</a></li>
+											</ul>
+										</article>
+										<article>
+											<a href="#" class="image"><img src="images/pic05.jpg" alt="" /></a>
+											<h3>Feugiat lorem aenean</h3>
+											<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
+											<ul class="actions">
+												<li><a href="#" class="button">Saiba mais</a></li>
+											</ul>
+										</article>
+										<article>
+											<a href="#" class="image"><img src="images/pic06.jpg" alt="" /></a>
+											<h3>Amet varius aliquam</h3>
+											<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
+											<ul class="actions">
+												<li><a href="#" class="button">Saiba mais</a></li>
+											</ul>
+										</article> -->
+					</div>
+				</section>
+
+				<!-- <section>
+									<header>
+										<h1>Contatos</h1>
+									</header>
+										<h4>Sinta-se a vontade para entrar em contato</h4>
+										<ul class="alt">
+											 <li><a href="#" class="icon brands fa-linkedin"><span class="label"><b>Linkedin</b></span></a> </li>
+											<li><b>Linkedin: </b><a href="https://www.linkedin.com/in/felipe-ribeiro-data-science/">https://www.linkedin.com/in/felipe-ribeiro-data-science/</a> </li>
+											<li> <b>Email: </b> <a href="felipe.rs.ds23@gmail.com">felipe.rs.ds23@gmail.com</a>, <a href="mtz.dev.si@gmail.com">mtz.dev.si@gmail.com</a> </li>
+											<li> <b>GitHub: </b><a href="https://github.com/f-mtz">https://github.com/f-mtz</a></li>
+										</ul>
+																		
+								</section> -->
+
+				<section>
+					<header class="major">
+						<h2>Contatos</h2>
+					</header>
+					<p>Sinta-se à vontade para entrar em contato.</p>
+					<ul class="contact">
+						<!-- <li><a href="#" class="icon brands fa-linkedin"><span class="label"><b>Linkedin</b></span></a><b>Linkedin: </b><a href="https://www.linkedin.com/in/felipe-ribeiro-data-science/">https://www.linkedin.com/in/felipe-ribeiro-data-science/</a> </li> -->
+						<!-- <li class="icon solid fa-envelope"><a href="#">felipe.rs.ds23@gmail.com</a>, <a href="#">mtz.dev.si@gmail.com</a></li> -->
+						<li><i class="fas fa-envelope email-color style-icon-background"></i><a
+								class="afastamento-icone-valor" href="#" target="_blank">filipe.ambrozio.s3@gmail.com</a>,
+							<a href="#">filipe.ambrozio.s3@gmail.com</a></li>
+						<!-- <li class="icon solid fa-phone">(000) 000-0000</li> -->
+						<!-- <li><i class="fab fa-whatsapp style-icon-background whatsapp-color"></i> <span class="afastamento-icone-valor">(000) 000-0000</span></li> -->
+						<li><i class="fab fa-linkedin linkedin-color style-icon-background"></i> <a
+								class="afastamento-icone-valor"
+								href="https://www.linkedin.com/in/felipe-ribeiro-data-science/"
+								target="_blank">www.linkedin.com/in/filipe-ambrozio-37467630b</a></li>
+						<li><i class="fab fa-github github-color style-icon-background"></i> <a
+								class="afastamento-icone-valor" href="https://github.com/" target="_blank"
+								rel="noopener noreferrer">https://github.com/</a></li>
+						<!-- <li><i class="fab fa-git git-icon-background"></i> <a class="afastamento-icone-valor" href="https://www.linkedin.com/in/felipe-ribeiro-data-science/">https://www.linkedin.com/in/felipe-ribeiro-data-science/</a></li> -->
+						<!-- <li class="icon solid fa-home">1234 Somewhere Road #8254<br /> Nashville, TN 00000-0000</li> -->
+
+					</ul>
+				</section>
+
+			</div>
+		</div>
+
+		<!-- Sidebar -->
+		<!-- <div id="sidebar">
+						<div class="inner"> -->
+
+		<!-- Search -->
+		<!-- <section id="search" class="alt">
+									<form method="post" action="#">
+										<input type="text" name="query" id="query" placeholder="Search" />
+									</form>
+								</section> -->
+
+		<!-- Menu -->
+		<!-- <nav id="menu">
+									<header class="major">
+										<h2>Menu</h2>
+									</header>
+									<ul>
+										<li><a href="index.html">Homepage</a></li>
+										<li><a href="generic.html">Generic</a></li>
+										<li><a href="elements.html">Elements</a></li>
+										<li>
+											<span class="opener">Submenu</span>
+											<ul>
+												<li><a href="#">Lorem Dolor</a></li>
+												<li><a href="#">Ipsum Adipiscing</a></li>
+												<li><a href="#">Tempus Magna</a></li>
+												<li><a href="#">Feugiat Veroeros</a></li>
+											</ul>
+										</li>
+										<li><a href="#">Etiam Dolore</a></li>
+										<li><a href="#">Adipiscing</a></li>
+										<li>
+											<span class="opener">Another Submenu</span>
+											<ul>
+												<li><a href="#">Lorem Dolor</a></li>
+												<li><a href="#">Ipsum Adipiscing</a></li>
+												<li><a href="#">Tempus Magna</a></li>
+												<li><a href="#">Feugiat Veroeros</a></li>
+											</ul>
+										</li>
+										<li><a href="#">Maximus Erat</a></li>
+										<li><a href="#">Sapien Mauris</a></li>
+										<li><a href="#">Amet Lacinia</a></li>
+									</ul>
+								</nav>   -->
+
+		<!-- Section -->
+		<!-- <section>
+									<header class="major">
+										<h2>Ante interdum</h2>
+									</header>
+									<div class="mini-posts">
+										<article>
+											<a href="#" class="image"><img src="images/pic07.jpg" alt="" /></a>
+											<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore aliquam.</p>
+										</article>
+										<article>
+											<a href="#" class="image"><img src="images/pic08.jpg" alt="" /></a>
+											<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore aliquam.</p>
+										</article>
+										<article>
+											<a href="#" class="image"><img src="images/pic09.jpg" alt="" /></a>
+											<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore aliquam.</p>
+										</article>
+									</div>
+									<ul class="actions">
+										<li><a href="#" class="button">More</a></li>
+									</ul>
+								</section> -->
+
+		<!-- Section -->
+		<!-- <section>
+									<header class="major">
+										<h2>Get in touch</h2>
+									</header>
+									<p>Sed varius enim lorem ullamcorper dolore aliquam aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin sed aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
+									<ul class="contact">
+										<li class="icon solid fa-envelope"><a href="#">information@untitled.tld</a></li>
+										<li class="icon solid fa-phone">(000) 000-0000</li>
+										<li class="icon solid fa-home">1234 Somewhere Road #8254<br />
+										Nashville, TN 00000-0000</li>
+									</ul>
+								</section> -->
+
+		<!-- Footer -->
+		<!-- <footer id="footer">
+									<p class="copyright">&copy; Untitled. All rights reserved. Demo Images: <a href="https://unsplash.com">Unsplash</a>. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+								</footer> -->
+
+	</div>
+	</div>
+
+	</div>
+
+	<style>
+		/* CSS */
+
+
+		.afastamento-icone-valor {
+			margin-left: 10px;
+		}
+
+		.style-icon-background {
+			/* background-color: rgb(10, 102, 194); Cor de fundo */
+			border-radius: 50%;
+			/* Arredondamento das bordas para torná-lo circular */
+			padding: 5px;
+			/* Preenchimento em torno do ícone */
+			color: white;
+			margin-left: -55px;
+		}
+
+		.whatsapp-color {
+			background-color: green;
+		}
+
+		.linkedin-color {
+			color: rgb(10, 102, 194);
+		}
+
+		.github-color {
+			color: black;
+		}
+
+		.email-color {
+			color: rgb(243, 90, 90);
+		}
+	</style>
+	<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/browser.min.js"></script>
+	<script src="assets/js/breakpoints.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
 
 </body>
+<!-- <style>
+	/* CSS para o dark mode */
+	.dark-mode {
+		background-color: #121212;
+		color: #f1f1f1;
+	}
+	.dark-mode #header,
+	.dark-mode #banner,
+	.dark-mode section,
+	.dark-mode .content,
+	.dark-mode .features article,
+	.dark-mode .posts article {
+		background-color: #1e1e1e;
+		color: #f1f1f1;
+		border-color: #333;
+	}
+	.dark-mode h1,
+	.dark-mode h2,
+	.dark-mode h3,
+	.dark-mode h4,
+	.dark-mode p,
+	.dark-mode li {
+		color: #f1f1f1;
+	}
+	.dark-mode .button {
+		background-color: #333;
+		color: #f1f1f1;
+	}
+	.dark-mode .button:hover {
+		background-color: #555;
+	}
+	
+	/* Estilo do botão de dark mode */
+	#dark-mode-toggle {
+		position: fixed;
+		top: 20px;
+		right: 20px;
+		z-index: 9999;
+		background: #333;
+		color: white;
+		border: none;
+		padding: 10px 15px;
+		border-radius: 5px;
+		cursor: pointer;
+		font-size: 14px;
+	}
+	#dark-mode-toggle:hover {
+		background: #555;
+	}
+	
+	/* Outros estilos existentes */
+	.afastamento-icone-valor {
+		margin-left: 10px;
+	}
+	.style-icon-background {
+		border-radius: 50%;
+		padding: 5px;
+		color: white;
+		margin-left: -55px;
+	}
+	.whatsapp-color {
+		background-color: green;
+	}
+	.linkedin-color {
+		color: rgb(10, 102, 194);
+	}
+	.github-color {
+		color: black;
+	}
+	.email-color {
+		color: rgb(243, 90, 90);
+	}
+</style> -->
+
+<style>
+	/* CSS para o dark mode */
+	body.dark-mode,
+	body.dark-mode #wrapper,
+	body.dark-mode #main,
+	body.dark-mode .inner,
+	body.dark-mode #header,
+	body.dark-mode #banner,
+	body.dark-mode section,
+	body.dark-mode .content,
+	body.dark-mode .features article,
+	body.dark-mode .posts article {
+		background-color: #121212;
+		color: #f1f1f1;
+	}
+	body.dark-mode h1,
+	body.dark-mode h2,
+	body.dark-mode h3,
+	body.dark-mode h4,
+	body.dark-mode p,
+	body.dark-mode li,
+	body.dark-mode .logo,
+	body.dark-mode .icon {
+		color: #f1f1f1 !important;
+	}
+	body.dark-mode .button {
+		background-color: #333;
+		color: #f1f1f1;
+	}
+	body.dark-mode .button:hover {
+		background-color: #555;
+	}
+	
+	/* Estilo do botão de dark/light mode */
+	#theme-toggle {
+		position: fixed;
+		top: 20px;
+		right: 20px;
+		z-index: 9999;
+		background: #333;
+		color: white;
+		border: none;
+		padding: 10px 15px;
+		border-radius: 5px;
+		cursor: pointer;
+		font-size: 14px;
+		transition: all 0.3s ease;
+	}
+	#theme-toggle:hover {
+		background: #555;
+	}
+	body.dark-mode #theme-toggle {
+		background: #f1f1f1;
+		color: #333;
+	}
+	body.dark-mode #theme-toggle:hover {
+		background: #ddd;
+	}
+	
+	/* Outros estilos existentes */
+	.afastamento-icone-valor {
+		margin-left: 10px;
+	}
+	.style-icon-background {
+		border-radius: 50%;
+		padding: 5px;
+		color: white;
+		margin-left: -55px;
+	}
+	.whatsapp-color {
+		background-color: green;
+	}
+	.linkedin-color {
+		color: rgb(10, 102, 194);
+	}
+	.github-color {
+		color: black;
+	}
+	.email-color {
+		color: rgb(243, 90, 90);
+	}
+	body.dark-mode .github-color {
+		color: #f1f1f1;
+	}
+</style>
+
+
+
+<script>
+	// Função para alternar o dark mode
+	document.getElementById('dark-mode-toggle').addEventListener('click', function() {
+		document.body.classList.toggle('dark-mode');
+		document.querySelectorAll('#wrapper, #main, .inner, #header, #banner, section, .content, .features article, .posts article').forEach(element => {
+			element.classList.toggle('dark-mode');
+		});
+		
+		// Mudar o texto do botão
+		if (document.body.classList.contains('dark-mode')) {
+			this.textContent = 'Light Mode';
+		} else {
+			this.textContent = 'Dark Mode';
+		}
+		
+		// Salvar preferência no localStorage
+		if (document.body.classList.contains('dark-mode')) {
+			localStorage.setItem('darkMode', 'enabled');
+		} else {
+			localStorage.setItem('darkMode', 'disabled');
+		}
+	});
+	
+	// Verificar preferência salva ao carregar a página
+	if (localStorage.getItem('darkMode') === 'enabled') {
+		document.body.classList.add('dark-mode');
+		document.querySelectorAll('#wrapper, #main, .inner, #header, #banner, section, .content, .features article, .posts article').forEach(element => {
+			element.classList.add('dark-mode');
+		});
+		document.getElementById('dark-mode-toggle').textContent = 'Light Mode';
+	}
+</script>
+
 </html>
