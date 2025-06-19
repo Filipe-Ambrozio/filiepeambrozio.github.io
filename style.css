@@ -1,0 +1,124 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: #f5f5f5;
+}
+
+.resume-container {
+  display: flex;
+  max-width: 1000px;
+  margin: 30px auto;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar {
+  width: 35%;
+  background: #e9e9e9;
+  padding: 20px;
+}
+
+.main {
+  width: 65%;
+  background: #ffffff;
+  padding: 30px;
+}
+
+.profile-pic {
+  width: 100%;
+  border-radius: 12px;
+  margin-bottom: 10px;
+}
+
+h1 {
+  margin: 0;
+  font-size: 24px;
+  color: #1a1a1a;
+}
+
+.title {
+  font-size: 14px;
+  margin: 4px 0 12px;
+  color: #333;
+}
+
+.contact {
+  font-size: 12px;
+  color: #555;
+}
+
+.section {
+  margin-top: 30px;
+}
+
+.section h2 {
+  font-size: 16px;
+  margin-bottom: 10px;
+  border-bottom: 2px solid #888;
+  padding-bottom: 4px;
+}
+
+.skill p {
+  margin: 0;
+  font-size: 13px;
+}
+
+.bar {
+  background: #ccc;
+  height: 8px;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
+.fill {
+  background: #00796b;
+  height: 100%;
+}
+
+.lang-list {
+  padding-left: 18px;
+  font-size: 13px;
+}
+
+.main section {
+  margin-bottom: 40px;
+}
+
+.main h2 {
+  border-bottom: 2px solid #ddd;
+  padding-bottom: 4px;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.main p {
+  font-size: 14px;
+  color: #333;
+  line-height: 1.6;
+}
+
+.edu-block, .exp-block {
+  margin-bottom: 20px;
+}
+
+.edu-block h3, .exp-block h3 {
+  margin: 0;
+  font-size: 15px;
+  color: #1a1a1a;
+}
+
+.sub {
+  font-size: 13px;
+  color: #777;
+  margin-bottom: 5px;
+}
+
+.exp-block ul {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.exp-block ul li {
+  font-size: 14px;
+  margin-bottom: 5px;
+}
